@@ -24,19 +24,18 @@ const styleS = {
 export default class Option extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selected: true
-    };
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleClick() {
-    console.log(this.props.option);
-  }
+  // handleClick(key) {
+  //   console.log(this.props.option);
+  //   this.setState({ selected: !this.state.selected });
+  // }
   render() {
     return (
       <div
         onClick={this.handleClick}
-        style={this.state.selected ? styleS : styleN}
+        style={this.props.checked ? styleS : styleN}
+        onClick={() => this.props.handleClick(this.props.optionKey)}
       >
         <p style={{ textAlign: "center", marginTop: 8 }}>
           {this.props.option}

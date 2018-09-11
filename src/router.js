@@ -12,7 +12,6 @@
 //     </Router>
 //   );
 // }
-
 // export default RouterConfig;
 
 import React from "react";
@@ -34,11 +33,11 @@ const Routers = function({ history, app }) {
     },
     {
       path: "/answer",
-      models: () => [import("./models/answer")],
+      models: () => [import("./models/question")],
       component: () => import("./routes/Aqs")
     },
     {
-      models: () => [import("./models/answer")],
+      models: () => [import("./models/question")],
       component: () => import("./components/question/Question")
     }
   ];

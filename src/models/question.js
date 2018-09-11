@@ -12,19 +12,23 @@
 
 export default {
   namespace: "qaa",
-  state: [
-    {
-      describe: "你喜欢打球吗",
-      option: ["yes", "no"],
-      answer: "yes"
-    },
-
-    {
-      describe: "你有别的爱好吗",
-      option: ["有", "无"],
-      answer: "有"
+  state: {
+    Q: [
+      {
+        describe: "你喜欢打球吗",
+        option: ["yes", "no", "中立"],
+        answer: 0
+      },
+      {
+        describe: "你有别的爱好吗",
+        option: ["有", "无"],
+        answer: 0
+      }
+    ],
+    B: {
+      hi: "不想出现B"
     }
-  ],
+  },
 
   subscriptions: {
     setup({ dispatch, history }) {

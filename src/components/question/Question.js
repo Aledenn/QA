@@ -20,6 +20,9 @@ export default class Question extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
+  componentDidMount() {
+    this.props.dispatch({ type: "qaa/Qdata" });
+  }
   handleClick(optionKey) {
     console.log(optionKey);
     let answer = { ...this.state.checked };
@@ -33,8 +36,6 @@ export default class Question extends Component {
     let length = this.state.num;
     console.log(length);
     for (let index = 0; index < length; index++) {
-      console.log("state里的东西", this.state.checked[index]);
-      console.log("Q里面的东西：", this.props.Q[index].answer);
       if (this.state.checked[index] == this.props.Q[index].answer) {
         count++;
       }

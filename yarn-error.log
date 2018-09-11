@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Licb\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add bootstrap@3
+  C:\Program Files\nodejs\node.exe C:\Users\Licb\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add mongoose
 
 PATH: 
   C:\oracle\ora81\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Oracle\jre\1.1.7\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\soft\Microsoft VS Code\bin;C:\Program Files\nodejs\;D:\soft\SVN\bin;D:\soft\Git\cmd;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Users\Licb\AppData\Local\Yarn\bin;C:\Users\Licb\AppData\Local\Microsoft\WindowsApps;C:\Users\Licb\AppData\Roaming\npm
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: connect ETIMEDOUT 104.16.18.35:443
+  Error: connect ETIMEDOUT 104.16.19.35:443
       at Object._errnoException (util.js:992:11)
       at _exceptionWithHostPort (util.js:1014:20)
       at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1186:14)
@@ -32,7 +32,10 @@ npm manifest:
       "antd": "^3.9.1",
       "axios": "^0.18.0",
       "babel-plugin-import": "^1.8.0",
+      "cookie-parser": "^1.4.3",
       "dva": "^2.4.0",
+      "express": "^4.16.3",
+      "mssql": "^4.1.0",
       "react": "^16.2.0",
       "react-dom": "^16.2.0"
     },
@@ -1900,6 +1903,10 @@ Lockfile:
       check-types "^7.3.0"
       tryer "^1.0.0"
   
+  big-number@0.3.1:
+    version "0.3.1"
+    resolved "https://registry.yarnpkg.com/big-number/-/big-number-0.3.1.tgz#ac73020c0a59bb79eb17c2ce2db77f77d974e013"
+  
   big.js@^3.1.3:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -1907,6 +1914,13 @@ Lockfile:
   binary-extensions@^1.0.0:
     version "1.11.0"
     resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
+  
+  bl@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.2.tgz#a160911717103c07410cef63ef51b397c025af9c"
+    dependencies:
+      readable-stream "^2.3.5"
+      safe-buffer "^5.1.1"
   
   bluebird@^3.4.7, bluebird@^3.5.1:
     version "3.5.2"
@@ -2582,6 +2596,13 @@ Lockfile:
     dependencies:
       safe-buffer "~5.1.1"
   
+  cookie-parser@^1.4.3:
+    version "1.4.3"
+    resolved "https://registry.yarnpkg.com/cookie-parser/-/cookie-parser-1.4.3.tgz#0fe31fa19d000b95f4aadf1f53fdc2b8a203baa5"
+    dependencies:
+      cookie "0.3.1"
+      cookie-signature "1.0.6"
+  
   cookie-signature@1.0.6:
     version "1.0.6"
     resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
@@ -2893,7 +2914,7 @@ Lockfile:
     version "0.1.4"
     resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
   
-  debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
+  debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.3, debug@^2.6.6, debug@^2.6.8, debug@^2.6.9:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
     dependencies:
@@ -2995,7 +3016,7 @@ Lockfile:
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.1.tgz#5783b4e1c459f06fa5ca27f991f3d06e7a310359"
   
-  depd@~1.1.1, depd@~1.1.2:
+  depd@^1.1.2, depd@~1.1.1, depd@~1.1.2:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
   
@@ -3786,9 +3807,9 @@ Lockfile:
       jest-message-util "^22.4.3"
       jest-regex-util "^22.4.3"
   
-  express@^4.16.2:
+  express@^4.16.2, express@^4.16.3:
     version "4.16.3"
-    resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
+    resolved "http://registry.npmjs.org/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
     dependencies:
       accepts "~1.3.5"
       array-flatten "1.1.1"
@@ -4221,6 +4242,10 @@ Lockfile:
       string-width "^1.0.1"
       strip-ansi "^3.0.1"
       wide-align "^1.1.0"
+  
+  generic-pool@^3.1.7:
+    version "3.4.2"
+    resolved "https://registry.yarnpkg.com/generic-pool/-/generic-pool-3.4.2.tgz#92ff7196520d670839a67308092a12aadf2f6a59"
   
   get-caller-file@^1.0.1:
     version "1.0.3"
@@ -4746,7 +4771,7 @@ Lockfile:
     dependencies:
       safer-buffer ">= 2.1.2 < 3"
   
-  iconv-lite@^0.4.17, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+  iconv-lite@^0.4.17, iconv-lite@^0.4.23, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
     version "0.4.24"
     resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
     dependencies:
@@ -6290,6 +6315,14 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
   
+  mssql@^4.1.0:
+    version "4.1.0"
+    resolved "https://registry.yarnpkg.com/mssql/-/mssql-4.1.0.tgz#5a70e24d751c28bcb9f23acf709c1bdaccc8eae6"
+    dependencies:
+      debug "^2.6.3"
+      generic-pool "^3.1.7"
+      tedious "^2.0.0"
+  
   multicast-dns-service-types@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/multicast-dns-service-types/-/multicast-dns-service-types-1.1.0.tgz#899f11d9686e5e05cb91b35d5f0e63b773cfc901"
@@ -6328,6 +6361,10 @@ Lockfile:
       regex-not "^1.0.0"
       snapdragon "^0.8.1"
       to-regex "^3.0.1"
+  
+  native-duplexpair@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/native-duplexpair/-/native-duplexpair-1.0.0.tgz#7899078e64bf3c8a3d732601b3d40ff05db58fa0"
   
   natural-compare@^1.4.0:
     version "1.4.0"
@@ -8868,6 +8905,10 @@ Lockfile:
     dependencies:
       extend-shallow "^3.0.0"
   
+  sprintf-js@^1.1.1:
+    version "1.1.1"
+    resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.1.1.tgz#36be78320afe5801f6cea3ee78b6e5aab940ea0c"
+  
   sprintf-js@~1.0.2:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
@@ -9170,6 +9211,20 @@ Lockfile:
       mkdirp "^0.5.0"
       safe-buffer "^5.1.2"
       yallist "^3.0.2"
+  
+  tedious@^2.0.0:
+    version "2.6.4"
+    resolved "https://registry.yarnpkg.com/tedious/-/tedious-2.6.4.tgz#b3dee882458fbed8e7c8778156344f049dda3f38"
+    dependencies:
+      babel-runtime "^6.26.0"
+      big-number "0.3.1"
+      bl "^1.2.2"
+      depd "^1.1.2"
+      iconv-lite "^0.4.23"
+      native-duplexpair "^1.0.0"
+      punycode "^2.1.0"
+      readable-stream "^2.3.6"
+      sprintf-js "^1.1.1"
   
   term-size@^1.2.0:
     version "1.2.0"

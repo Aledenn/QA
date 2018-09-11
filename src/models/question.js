@@ -10,6 +10,8 @@
 
 */
 
+import query from "../services/example";
+
 export default {
   namespace: "qaa",
   state: {
@@ -24,12 +26,22 @@ export default {
         option: ["有", "无"],
         answer: 0
       }
-    ],
-    B: {
-      hi: "不想出现B"
-    }
+    ]
   },
 
+  effects: {
+    *Qdata({ payload: todo }, { call, put }) {
+      const result = yield call(query);
+      console.log(result.data);
+      console.log(result.data.Q);
+      yield put({
+        type: "save",
+        payload: {
+          data: result.data
+        }
+      });
+    }
+  },
   subscriptions: {
     setup({ dispatch, history }) {
       // eslint-disable-line
@@ -38,7 +50,8 @@ export default {
 
   reducers: {
     save(state, action) {
-      return { ...state, ...action.payload };
+      console.log(action.payload);
+      return { ...state, ...action.payload.data };
     }
   }
 };

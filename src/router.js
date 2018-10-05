@@ -1,19 +1,3 @@
-// import React from "react";
-// import { Router, Route, Switch } from "dva/router";
-// import IndexPage from "./routes/IndexPage";
-// import Aqs from "./routes/Aqs";
-// function RouterConfig({ history }) {
-//   return (
-//     <Router history={history}>
-//       <Switch>
-//         <Route path="/" exact component={IndexPage} />
-//         <Route path="/answer" exact component={Aqs} />
-//       </Switch>
-//     </Router>
-//   );
-// }
-// export default RouterConfig;
-
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Router, Redirect, routerRedux } from "dva/router";
@@ -21,11 +5,6 @@ import dynamic from "dva/dynamic";
 const { ConnectedRouter } = routerRedux;
 
 const Routers = function({ history, app }) {
-  // demo
-  // const error = dynamic({
-  //   app,
-  //   component: () => import("./routes/error")
-  // });
   const routes = [
     {
       path: "/",

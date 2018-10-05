@@ -15,12 +15,9 @@ export default class Aqs extends Component {
     };
   }
   render() {
-    console.log(this.props);
     return (
       <div>
         <h1> 答题界面</h1>
-        {/* <Option />
-        <Option option="为什么提示都没了" /> */}
         <Question />
       </div>
     );

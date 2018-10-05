@@ -1,5 +1,7 @@
 import request from "../utils/request";
 
 export default function query() {
-  return request("/rQ");
+  let a = request("/rQ");
+  console.log(a);
+  return a;
 }

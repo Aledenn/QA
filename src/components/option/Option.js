@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import styles from "./option.css";
-
+import styleH from "./option.css";
 const styleN = {
   verticalAlign: "center",
   border: "1px black solid",
@@ -24,16 +23,12 @@ const styleS = {
 export default class Option extends Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
   }
-  // handleClick(key) {
-  //   console.log(this.props.option);
-  //   this.setState({ selected: !this.state.selected });
-  // }
   render() {
     return (
       <div
         onClick={this.handleClick}
+        className={styleH.option}
         style={this.props.checked ? styleS : styleN}
         onClick={() => this.props.handleClick(this.props.optionKey)}
       >

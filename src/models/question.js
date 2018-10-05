@@ -1,15 +1,3 @@
-/*
-请求的json格式
-{
-    num:{
-    descript: String
-    option:["yes","no"]
-    answer: String
-    }
-}
-
-*/
-
 import query from "../services/example";
 
 export default {
@@ -32,8 +20,6 @@ export default {
   effects: {
     *Qdata({ payload: todo }, { call, put }) {
       const result = yield call(query);
-      console.log(result.data);
-      console.log(result.data.Q);
       yield put({
         type: "save",
         payload: {
@@ -51,7 +37,7 @@ export default {
   reducers: {
     save(state, action) {
       console.log(action.payload);
-      return { ...state, ...action.payload.data };
+      return { Q: [...action.payload.data] };
     }
   }
 };

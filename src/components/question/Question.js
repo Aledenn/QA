@@ -13,7 +13,7 @@ export default class Question extends Component {
         // qkey: null,
         // qkey2: null
       },
-      num: this.props.Q.length,
+      // num: this.props.Q.length,
       modal1Visible: false,
       grade: 0
     };
@@ -24,7 +24,6 @@ export default class Question extends Component {
     this.props.dispatch({ type: "qaa/Qdata" });
   }
   handleClick(optionKey) {
-    console.log(optionKey);
     let answer = { ...this.state.checked };
     answer[optionKey[0]] = optionKey[1];
     this.setState({ checked: answer });
@@ -33,7 +32,7 @@ export default class Question extends Component {
   handleSubmit() {
     console.log(this.state);
     let count = 0;
-    let length = this.state.num;
+    let length = this.props.Q.length;
     console.log(length);
     for (let index = 0; index < length; index++) {
       if (this.state.checked[index] == this.props.Q[index].answer) {

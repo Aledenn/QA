@@ -16,6 +16,18 @@ const Routers = function({ history, app }) {
       component: () => import("./routes/Aqs")
     },
     {
+      path: "/context",
+      component: () => import("./components/test/Test1")
+    },
+    {
+      path: "/form1",
+      component: () => import("./components/test/Form1")
+    },
+    {
+      path: "/form2",
+      component: () => import("./components/test/Form2")
+    },
+    {
       models: () => [import("./models/question")],
       component: () => import("./components/question/Question")
     }

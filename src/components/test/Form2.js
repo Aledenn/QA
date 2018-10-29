@@ -23,6 +23,8 @@ export default class Form2 extends React.Component {
   };
 
   render() {
+
+    console.log(this.props)
     // getFieldDecorator用来绑定表单
     const {
       getFieldDecorator,

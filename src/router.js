@@ -28,6 +28,38 @@ const Routers = function({ history, app }) {
       component: () => import("./components/test/Form2")
     },
     {
+      path: "/register",
+      component: () => import("./components/test/Register")
+    },
+    {
+      path: "/modalForm",
+      component: () => import("./components/test/ModalForm")
+    },
+    {
+      path: "/dynamicField",
+      component: () => import("./components/test/DynamicFieldSet")
+    },
+    {
+      path: "/timeSelector",
+      component: () => import("./components/test/TimeSelector")
+    },
+    {
+      path: "/diyForm",
+      component: () => import("./components/test/diyForm")
+    },
+    {
+      path: "/stateForm",
+      component: () => import("./components/test/stateField")
+    },
+    {
+      path: "/setField",
+      component: () => import("./components/test/setFieldValue")
+    },
+    {
+      path: "/tabletest",
+      component: () => import("./components/tabletest/Tabletest")
+    },
+    {
       models: () => [import("./models/question")],
       component: () => import("./components/question/Question")
     }
